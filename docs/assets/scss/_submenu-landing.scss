@@ -1,0 +1,25 @@
+.submenu{
+    position: relative;
+   width: 100%;
+   min-height: 6vh;
+   top:40px;
+   display: flex;
+   justify-content: left;
+   align-items: center;
+   background: var(--colorbase3);
+}
+.submenu ul{
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+}
+.submenu li a{
+    text-decoration: none;
+    color:var(--colortexto2)
+}
+
+.submenu li a:hover{
+    color:var(--colortextohover3);
+}
+

@@ -1,0 +1,42 @@
+<app-header></app-header>
+<app-submenu></app-submenu>
+<section class="directory">
+    <div class="row">
+        <div class="col100">
+            <h2 class="titleText"><span>D</span>irectory</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam fuga ullam accusamus earum, a maiores, reprehenderit quae illo incidunt ad numquam rerum expedita dignissimos unde praesentium maxime! Illo, nihil ipsum.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col50">
+            <div class="search" [ngClass]="{active:estadoactive}">
+                <div class="icon" (click)="cambiaEstado()"></div>
+                <div class="input" >
+                    <input type="text" placeholder="Buscar" #mysearch>
+                </div>
+                <span class="clear" (click)="mysearch.value=''"></span>
+            </div>
+        </div>
+        <div class="col50"><a routerLink="/inicio/formulario" class="btn">Registrese</a></div>
+    </div>
+    <div class="contentglobal">
+        <div class="box" *ngFor="let expertos of experto">
+            <div class="card">
+                <div class="circle">
+                    <div class="imgBx">
+                        <img src="{{expertos.avatar}}" alt="">
+                    </div>
+                </div>
+                <div class="content">
+                    <a href=""><i class="fab fa-linkedin-in"></i></a>
+                <h3>{{expertos.first_name}} {{expertos.last_name}}</h3>
+                <div class="textIcon">
+                    <h4>FrontEnd Developer</h4>
+                    <a [routerLink]="['/inicio/experto',expertos.id]"><i class="fas fa-arrow-right    "></i></a>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>

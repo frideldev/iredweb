@@ -1,0 +1,136 @@
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0px 100px;
+    z-index:10000;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s;
+    background: var(--colorbase1);
+    width: 100%;
+    
+}
+header .logo{
+    position: relative;
+    width: 250px;
+    min-height: 45px;
+    height: 100%;
+}
+header .logo img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+header nav{
+    position: relative;
+}
+header nav ul{
+    margin:0;
+    padding: 0;
+    display: flex;
+}
+header nav ul li{
+    list-style: none;
+}
+header nav ul li a{
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+    color: var(--colortexto);
+    text-decoration: none;
+    display: block;
+}
+header nav ul li a:hover,
+header nav ul li a.active
+{
+    color:var(--colortextohover2);
+    background: var(--colorbase3);
+}
+.menu-toggle{
+    color:var(--colortexto2);
+    float: right;
+    line-height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+}
+.themeSwitch{
+    position: absolute;
+    bottom: 20px;
+    left: -220px;
+    width: 30px;
+    height: 30px;
+    background: var(--colorbase1);
+    color:var(--colortexto);
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.themeSwitch::before{
+    content: "\f205";
+    font-family: 'Font Awesome\ 5 Free';
+    font-weight: 900;
+}
+.dark .themeSwitch::before{
+    content: '\f204';
+    font-family: 'Font Awesome\ 5 Free';
+    font-weight: 900;
+}
+.themeSwitch::after{
+    content: 'Cambiar a Modo Oscuro';
+    position: absolute;
+    left: 40px;
+    font-size: 0.7em;
+    color:var(--colortexto);
+    white-space: nowrap;
+    font-weight: 300;
+    letter-spacing: 1px;
+    pointer-events: none;
+}
+.dark .themeSwitch::after{
+    content: 'Cambiar a Modo Claro';
+}
+@media(max-width:991px){
+   header{
+       padding: 0 20px;
+       background: var(--colorbase2);
+   } 
+  .menu-toggle{
+      display: block;
+  }
+  header nav{
+      
+      position: absolute;
+      width: 100%;
+      height: calc(100vh - 50px);
+      background: var(--colorbase2);;
+      top:50px;
+      left: -100%;
+      transition: 0.5s;
+  }
+  header nav.active{
+      left:0;
+  }
+  header nav ul{
+      display: block;
+      text-align: center;
+  }
+  header nav ul li a{
+      color:#fff;
+      border-bottom: 1px solid rgba(0,0,0,0.2);
+  }
+  .themeSwitch{
+    left: 40px;
+    background: var(--colorcontenido);
+}
+.themeSwitch::after{
+    color:var(--colortexto2);
+}
+}

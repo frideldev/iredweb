@@ -1,0 +1,125 @@
+<app-header></app-header>
+<app-submenu></app-submenu>
+<section>
+    <form class="form" [formGroup]="personalDetails">
+      <h2 class="titleText"><span>F</span>ormulario de Registro</h2>
+     
+  
+        <!-- Steps -->
+        <div class="form-step form-step-active" *ngIf="step==1">
+             <!-- Progress bar -->
+        <div class="progressbar">
+          <div class="progress" id="progress"></div>
+          
+          <div
+            class="progress-step progress-step-active"
+            data-title="Datos Personales"
+          ></div>
+          <div class="progress-step" data-title="Como te Apoyamos"></div>
+        
+        </div>
+          <div class="input-group">
+            <input type="text" name="correo" id="correo" formControlName="correo" placeholder="Correo Electronico" />
+          </div>
+          <div class="input-group">
+            <input type="text" name="nombre" id="nombre" formControlName="nombre" placeholder="Nombre" />
+          </div>
+          <div class="input-group">
+            <input type="text" name="apellidop" id="apellidop" formControlName="apellidop" placeholder="Apellido Paterno" />
+          </div>
+          <div class="input-group">
+            <input type="text" name="ciudad" id="ciudad" formControlName="ciudad" placeholder="Ciudad" />
+          </div>
+          <div class="input-group">
+            <input type="text" name="pais" id="pais" formControlName="pais" placeholder="Pais" />
+          </div>
+          <div class="input-group">
+            <input type="number" name="celular" id="celular" formControlName="celular" placeholder="Celular" />
+          </div>
+          <div class="input-group">
+            <input type="text" name="correoa" id="correoa" formControlName="correoa" placeholder="Email Alternativo" />
+          </div>
+          <div class="input-group">
+            <input type="text" name="web" id="web" formControlName="web" placeholder="Sitio Web"/>
+          </div>
+          <div class="radio-group">
+            <label class="container-radio">Si, como Miembro Experto ( Individual )
+              <input type="radio"  name="tipoexperto" formControlName="tipoexperto" value="si experto">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">Si, como Miembro ( Corporativo )
+              <input type="radio" name="tipoexperto" formControlName="tipoexperto" value="si miembro">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">No, Pero deseo tener una Alianza Estratégica ( Nos comunicaremos en breve )
+              <input type="radio" name="tipoexperto" formControlName="tipoexperto" value="no alianza">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-radio">No, Solo recibir información
+              <input type="radio" name="tipoexperto" formControlName="tipoexperto" value="no">
+              <span class="checkmark"></span>
+            </label>
+          </div>
+        </div>
+        <input  class="btn btn-prev" *ngIf="step!=2" type="button" (click)="siguiente()" value="Siguiente">
+        </form>
+        <form class="form">
+        <div class="form-step form-step-active" *ngIf="step==2">
+            <!-- Progress bar -->
+        <div class="progressbar">
+          <div class="progress" id="progress"></div>
+          
+          <div
+            class="progress-step "
+            data-title="Datos Personales"
+          ></div>
+          <div class="progress-step progress-step-active" data-title="Como te Apoyamos"></div>
+        
+        </div>
+          <div class="input-group">
+            <label class="container-checkbox">Liderizar del Ecosistema de innovación
+              <input type="checkbox" >
+              <span class="checkmark-checkbox"></span>
+            </label>
+            <label class="container-checkbox">Publicar o promocionar noticias del ámbito de la innovacion
+              <input type="checkbox">
+              <span class="checkmark-checkbox"></span>
+            </label>
+            <label class="container-checkbox">Financiar proyectos o emprendimientos
+              <input type="checkbox">
+              <span class="checkmark-checkbox"></span>
+            </label>
+            <label class="container-checkbox">Apoyar proyectos sociales o de innovación
+              <input type="checkbox">
+              <span class="checkmark-checkbox"></span>
+            </label>
+            <label class="container-checkbox">Desarrollar mi idea
+              <input type="checkbox">
+              <span class="checkmark-checkbox"></span>
+            </label>
+            <label class="container-checkbox">Hacer negocios y promocionar mi emprendimiento
+              <input type="checkbox">
+              <span class="checkmark-checkbox"></span>
+            </label>
+            <label class="container-checkbox">Capacitarme
+              <input type="checkbox">
+              <span class="checkmark-checkbox"></span>
+            </label>
+            <label class="container-checkbox">Networking
+              <input type="checkbox">
+              <span class="checkmark-checkbox"></span>
+            </label>
+            <label class="container-checkbox">Hacer sinergias con otros emprendedores
+              <input type="checkbox">
+              <span class="checkmark-checkbox"></span>
+            </label>
+          </div>
+          
+        </div>
+        <div class="btns-group">
+          <a  class="btn btn-prev" *ngIf="step!=1" (click)="previo()">Previo</a>
+          <input *ngIf="step==2" type="submit" value="Enviar" class="btn" />
+        </div>
+      </form>
+</section>
+<app-footer></app-footer>
